@@ -26,8 +26,8 @@ public class ChordSearchGUI {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			final int a = (int) spnA.getValue();
-			final int b = (int) spnB.getValue();
+			final int a = (Integer) spnA.getValue();
+			final int b = (Integer) spnB.getValue();
 			final ChordSearch.Result result = ChordSearch.search(a, b);
 			final String message;
 			if (result.isRoot) {
@@ -132,8 +132,8 @@ public class ChordSearchGUI {
 		spnA = new JSpinner();
 		spnA.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent e) {
-				final int a = (int) spnA.getValue();
-				final int b = (int) spnB.getValue();
+				final int a = (Integer) spnA.getValue();
+				final int b = (Integer) spnB.getValue();
 				spnB.setModel(new SpinnerNumberModel(Math.max(a, b), a, null, 1));
 			}
 		});
@@ -196,6 +196,7 @@ public class ChordSearchGUI {
 		pnlContent.add(lblResultValue, gbc_lblResultValue);
 
 		frmChordSearch.pack();
-		frmChordSearch.setSize(Math.max(350, frmChordSearch.getWidth()), frmChordSearch.getHeight());
+		frmChordSearch.setSize(Math.max(350, frmChordSearch.getWidth()),
+				frmChordSearch.getHeight());
 	}
 }

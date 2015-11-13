@@ -8,6 +8,11 @@ export default function search(a, b) {
         const error = "The second input can't be larger than the first input.";
         return { error };
     }
+    if (a === 0) {
+        const error =
+            "You can't have a zero first input and non-zero second input.";
+        return { error };
+    }
 
     const gcd = Utils.gcd(a, b);
     const pair = findPair(a / gcd, b / gcd);

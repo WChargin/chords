@@ -18,5 +18,6 @@ describe('ChordSearch', () => {
             expect(result).to.be.ok;
             expect(result.error).to.contain(message);
         });
+    fail(0, 10, "zero");
     fail(10, 5, "than");
 })

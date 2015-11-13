@@ -11,6 +11,7 @@ describe('ChordSearch', () => {
     test(6, 7, { tree: 1, position: [ 6, 2 ] });
     test(0, 0, { tree: 0, position: null });
     test(123, 234, { tree: 3, position: [ 14, 1028 ] });
+    test(9, 222, { tree: 3, position: [ 26, 25165825 ] });
 
     const fail = (a, b, message) => it(`works for input (${a}, ${b})`,
         () => {

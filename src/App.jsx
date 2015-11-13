@@ -59,13 +59,17 @@ class Error extends Component {
 class Result extends Component {
     render() {
         const n1 = strictParse(this.props.value1);
-        if (isNaN(n1)) {
-            return <Error>The first input must be a number.</Error>;
+        if (isNaN(n1) || n1 < 0) {
+            return <Error>
+                The first input must be a non-negative integer.
+            </Error>;
         }
 
         const n2 = strictParse(this.props.value2);
-        if (isNaN(n2)) {
-            return <Error>The second input must be a number.</Error>;
+        if (isNaN(n2) || n2 < 0) {
+            return <Error>
+                The second input must be a non-negative integer.
+            </Error>;
         }
 
         const result = search(n1, n2);
